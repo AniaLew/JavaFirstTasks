@@ -1,31 +1,8 @@
 package fibonacci.iterationmethod;
 
-import java.util.Scanner;
-
 public class FibonacciIterationMethod {
 
-  public static void main(String[] args) {
-    Scanner scan = new Scanner(System.in);
-    System.out.println("Program counts n_th number of Fibonacci sequence using iteration method.");
-    System.out.print("Give n number: ");
-    int n = -1;
-    do {
-      n = scan.nextInt();
-      if ((n < 1) || (n > Integer.MAX_VALUE)) {
-        System.out.print("Invalid number. Give n again: ");
-      }
-    } while ((n < 1) || (n > Integer.MAX_VALUE));
-    scan.close();
-
-    System.out.println(n + "th number in Fibonacci sequence equals: " + fibonacci(n));
-
-    System.out.println("Ten first elements of Fibonacci sequence:");
-    for (int i = 1; i <= 10; i++) {
-      System.out.println("a" + i + " = " + fibonacci(i));
-    }
-  }
-
-  public static long fibonacci(int n) {
+  public static long fibonacci(int n) throws IllegalArgumentException{
     if (n < 0) {
       throw new IllegalArgumentException("Negative number n");
     }
